@@ -1,0 +1,23 @@
+.header-container {
+	position: relative;
+}
+
+.header-content-container {
+	justify-content: space-between;
+	align-items: center;
+	font-family: var(--font);
+	padding-bottom: 10px;
+	z-index: 2;
+	top: 20%;
+	background-color: var(--marvel-black);
+}
+
+.header-logo-marvel-big {
+	max-width: 30vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 1% auto;
+	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.505);
+}

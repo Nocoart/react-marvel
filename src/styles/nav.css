@@ -1,0 +1,37 @@
+.nav-container {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+.nav-container nav ul {
+	z-index: 3;
+	display: flex;
+	margin: 0 auto;
+	width: 500px;
+	justify-content: center;
+	border-radius: 20px;
+	position: sticky;
+	top: 0;
+}
+
+.nav-container nav ul li {
+	padding: 15px;
+	margin: 0 1vw;
+	color: white;
+	height: 100%;
+	border-radius: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 2rem;
+	font-weight: 900;
+}
+.nav-container nav ul li:hover {
+	text-shadow: 1px 1px 2px var(--marvel-black), 0 0 0.5em red, 0 0 0.2em white;
+	color: var(--marvel-yellow);
+	transition: 0.3s;
+}
+
+.nav-container nav ul li .header-icon {
+	padding-right: 5px;
+}
