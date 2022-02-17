@@ -1,10 +1,9 @@
 .nav-container {
 	position: sticky;
 	top: 0;
-	z-index: 10;
+	z-index: 2;
 }
 .nav-container nav ul {
-	z-index: 3;
 	display: flex;
 	margin: 0 auto;
 	width: 500px;

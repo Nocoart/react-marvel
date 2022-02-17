@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
 import Home from "./pages/Home";
 import Comics from "./pages/Comics";
 import Favourites from "./pages/Favourites";
@@ -8,9 +7,9 @@ import Character from "./pages/Character";
 
 //fontawsome
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHeart, faBookOpen, faMask } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHeart, faBookOpen, faMask);
+library.add(faSearch);
 
 function App() {
 	return (
