@@ -1,18 +1,38 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../styles/search.css";
 
-const Search = ({ characterSearch, setCharacterSearch }) => {
+const Search = ({
+	characterSearch,
+	setCharacterSearch,
+	comicsSearch,
+	setComicsSearch,
+}) => {
+	const { pathname } = useLocation();
 	const handleChange = (e) => {
-		setCharacterSearch(e.target.value);
+		if (pathname === "/") setCharacterSearch(e.target.value);
+		else if (pathname === "/comics") setComicsSearch(e.target.value);
+		console.log("characterSearch ==", characterSearch);
+		console.log("comicsSearch ==", comicsSearch);
 	};
 
 	return (
 		<div className="search-container">
 			<div className="search-input">
 				<FontAwesomeIcon icon="fa-search" className="search-icon" />
-				<input type="text" value={characterSearch} onChange={handleChange} />
+				<input
+					type="text"
+					value={
+						pathname === "/"
+							? characterSearch
+							: pathname === "/comics"
+							? comicsSearch
+							: undefined
+					}
+					onChange={handleChange}
+				/>
 			</div>
 		</div>
 	);

@@ -4,7 +4,7 @@ import axios from "axios";
 import Nav from "../components/Nav";
 import "../styles/character.css";
 
-const Character = () => {
+const CharacterDetail = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [data, setData] = useState({});
 	const { id } = useParams();
@@ -43,4 +43,4 @@ const Character = () => {
 	);
 };
 
-export default Character;
+export default CharacterDetail;

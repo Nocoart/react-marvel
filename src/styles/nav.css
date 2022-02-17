@@ -25,6 +25,12 @@
 	font-size: 2rem;
 	font-weight: 900;
 }
+
+.nav-container nav ul li.active {
+	text-shadow: 1px 1px 2px var(--marvel-black), 0 0 0.5em red, 0 0 0.2em white;
+	color: var(--marvel-yellow);
+}
+
 .nav-container nav ul li:hover {
 	text-shadow: 1px 1px 2px var(--marvel-black), 0 0 0.5em red, 0 0 0.2em white;
 	color: var(--marvel-yellow);

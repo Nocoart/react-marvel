@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-import HomeCarousel from "../components/HomeCarousel";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Search from "../components/Search";
+import CharacterCarousel from "../components/CharacterCarousel";
 
 const Home = () => {
-	const [characterCarrousel, setCharacterCarrousel] = useState([]);
+	const [characterArray, setCharacterArray] = useState([]);
 	const [characterSearch, setCharacterSearch] = useState("");
+	const [comicsSearch, setComicsSearch] = useState("");
 	const [limit, setLimit] = useState(100);
 	const [page, setPage] = useState(1);
 
@@ -18,8 +19,7 @@ const Home = () => {
 				`http://localhost:3100/?name=${characterSearch}&limit=${limit}`
 			);
 			console.log(response.data.results);
-			console.log(characterSearch);
-			setCharacterCarrousel(response.data.results);
+			setCharacterArray(response.data.results);
 		};
 		fetchData();
 	}, [characterSearch]);
@@ -31,7 +31,7 @@ const Home = () => {
 				characterSearch={characterSearch}
 				setCharacterSearch={setCharacterSearch}
 			/>
-			<HomeCarousel characterCarrousel={characterCarrousel} />
+			<CharacterCarousel characterArray={characterArray} />
 		</div>
 	);
 };
