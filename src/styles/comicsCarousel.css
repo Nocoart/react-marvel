@@ -22,9 +22,9 @@
 	transition-property: cursor;
 	transition-duration: 0s;
 	transition-delay: 0s;
+	border-radius: 5px;
 }
 .comics-cards:hover img {
-	cursor: pointer;
 	filter: grayscale(1);
 	transform: scale(1.2);
 	z-index: 3;
@@ -55,6 +55,10 @@
 	display: none;
 	padding: 1rem 0;
 	background-color: var(--marvel-black);
+	line-height: 1.5rem;
+	max-height: 270px;
+	overflow: scroll;
+	border-radius: 5px;
 }
 .comics-cards:hover .comics-cards-description {
 	display: block;

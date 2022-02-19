@@ -5,25 +5,52 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import Search from "../components/Search";
 import ComicsCarousel from "../components/ComicsCarousel";
+import ChoosePage from "../components/ChoosePage";
 
-const Comics = () => {
+const Comics = ({
+	currentPage,
+	setCurrentPage,
+	limit,
+	setLimit,
+	count,
+	setCount,
+}) => {
 	const [comicsArray, setComicsArray] = useState([]);
 	const [comicsSearch, setComicsSearch] = useState("");
+	const [isLoading, setIsLoading] = useState(false);
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.get(`http://localhost:3100/comics`);
-				console.log(response.data.results);
+				setIsLoading(true);
+				const response = await axios.get(
+					`http://localhost:3100/comics/?title=${comicsSearch}&limit=${limit}&page=${currentPage}`
+				);
+				setCount(response.data.count);
 				setComicsArray(response.data.results);
-			} catch (error) {}
+				setIsLoading(false);
+			} catch (error) {
+				console.log({ error: error.message });
+			}
 		};
 		fetchData();
-	}, []);
+	}, [comicsSearch, currentPage, limit]);
+
 	return (
 		<div>
 			<Header />
-			<Nav />
-			<Search comicsSearch={comicsSearch} setComicsSearch={setComicsSearch} />
+			<Nav setCurrentPage={setCurrentPage} />
+			<Search
+				comicsSearch={comicsSearch}
+				setComicsSearch={setComicsSearch}
+				setCurrentPage={setCurrentPage}
+			/>
+			<ChoosePage
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}
+				limit={limit}
+				setLimit={setLimit}
+				count={count}
+			/>
 			<ComicsCarousel comicsArray={comicsArray} />
 		</div>
 	);

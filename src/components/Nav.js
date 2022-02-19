@@ -3,19 +3,19 @@ import { Link, useLocation } from "react-router-dom";
 
 import "../styles/nav.css";
 
-const Nav = () => {
+const Nav = ({ setCurrentPage }) => {
 	const { pathname } = useLocation();
 	return (
 		<div className="nav-container">
 			<nav>
 				<ul>
-					<Link to={"/"}>
+					<Link to={"/"} onClick={() => setCurrentPage(1)}>
 						<li className={pathname === "/" ? "active" : undefined}>
 							{/* <FontAwesomeIcon icon="mask" className="header-icon" /> */}
-							<span>PERSONNAGES</span>
+							<span>CHARACTERS</span>
 						</li>
 					</Link>
-					<Link to={"/comics"}>
+					<Link to={"/comics"} onClick={() => setCurrentPage(1)}>
 						<li className={pathname === "/comics" ? "active" : undefined}>
 							{/* <FontAwesomeIcon icon="book-open" className="header-icon" /> */}
 							<span>COMICS</span>
@@ -24,7 +24,7 @@ const Nav = () => {
 					<Link to={"/favourites"}>
 						<li className={pathname === "/favourites" ? "active" : undefined}>
 							{/* <FontAwesomeIcon icon="heart" className="header-icon" /> */}
-							<span>FAVORIS</span>
+							<span>FAVOURITES</span>
 						</li>
 					</Link>
 				</ul>

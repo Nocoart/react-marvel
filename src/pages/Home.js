@@ -5,31 +5,50 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Search from "../components/Search";
 import CharacterCarousel from "../components/CharacterCarousel";
+import ChoosePage from "../components/ChoosePage";
 
-const Home = () => {
+const Home = ({
+	currentPage,
+	setCurrentPage,
+	limit,
+	setLimit,
+	count,
+	setCount,
+}) => {
 	const [characterArray, setCharacterArray] = useState([]);
 	const [characterSearch, setCharacterSearch] = useState("");
-	const [comicsSearch, setComicsSearch] = useState("");
-	const [limit, setLimit] = useState(100);
-	const [page, setPage] = useState(1);
 
 	useEffect(() => {
-		const fetchData = async () => {
-			const response = await axios.get(
-				`http://localhost:3100/?name=${characterSearch}&limit=${limit}`
-			);
-			console.log(response.data.results);
-			setCharacterArray(response.data.results);
-		};
-		fetchData();
-	}, [characterSearch]);
+		try {
+			const fetchData = async () => {
+				const response = await axios.get(
+					`http://localhost:3100/?name=${characterSearch}&limit=${limit}&page=${currentPage}`
+				);
+				console.log(response.data);
+				setCount(response.data.count);
+				setCharacterArray(response.data.results);
+			};
+			fetchData();
+		} catch (error) {
+			console.log({ error: error.message });
+		}
+	}, [characterSearch, currentPage, limit]);
+
 	return (
 		<div className="page-container">
 			<Header />
-			<Nav />
+			<Nav setCurrentPage={setCurrentPage} />
 			<Search
 				characterSearch={characterSearch}
 				setCharacterSearch={setCharacterSearch}
+				setCurrentPage={setCurrentPage}
+			/>
+			<ChoosePage
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}
+				limit={limit}
+				setLimit={setLimit}
+				count={count}
 			/>
 			<CharacterCarousel characterArray={characterArray} />
 		</div>

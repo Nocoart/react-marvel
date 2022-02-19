@@ -1,20 +1,23 @@
 .nav-container {
 	position: sticky;
-	top: 0;
-	z-index: 2;
+	top: 0px;
+	z-index: 3;
+	width: 50vw;
+	margin: 0 auto;
 }
 .nav-container nav ul {
 	display: flex;
 	margin: 0 auto;
-	width: 500px;
+	width: 50vw;
 	justify-content: center;
 	border-radius: 20px;
 	position: sticky;
 	top: 0;
+	margin-bottom: 40px;
 }
 
 .nav-container nav ul li {
-	padding: 15px;
+	padding: 5px;
 	margin: 0 1vw;
 	color: white;
 	height: 100%;

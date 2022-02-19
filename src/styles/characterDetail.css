@@ -1,0 +1,52 @@
+.character-container h1 {
+	width: 100vw;
+	font-size: 50px;
+	text-align: center;
+	padding: 10px;
+	color: white;
+
+	text-shadow: 1px 1px 2px var(--marvel-black), 0 0 0.2em var(--marvel-yellow),
+		0 0 0.2em white;
+	position: sticky;
+	top: 0px;
+	z-index: 2;
+	padding-top: 50px;
+}
+
+.character-picture-container {
+	margin: 0 auto;
+	width: 50vw;
+	margin-top: 40px;
+	display: flex;
+	position: relative;
+	max-width: 60% 40%;
+}
+
+.character-img {
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	/* filter: grayscale(30%); */
+}
+
+.character-masque-radial {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	background: radial-gradient(#e6646400 20%, var(--marvel-black) 70%);
+}
+
+.character-details-container {
+	margin: 0 auto;
+	width: 50vw;
+	margin-top: 40px;
+	background-color: aliceblue;
+	color: white;
+}
+
+.character-details-container p {
+	font-size: 18px;
+	padding: 10px;
+	line-height: 1.5rem;
+}

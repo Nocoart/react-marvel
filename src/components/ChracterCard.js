@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LikeButton from "./LikeButton";
 
 const ChracterCard = ({ name, thumbnail, description, comics, _id }) => {
 	return (
@@ -8,6 +9,9 @@ const ChracterCard = ({ name, thumbnail, description, comics, _id }) => {
 			<div className="character-cards-description">{description}</div>
 			<div className="character-card-thumb">
 				<img src={thumbnail.path + "." + thumbnail.extension} alt="" />
+			</div>
+			<div className="like-character-button">
+				<LikeButton _id={_id} />
 			</div>
 		</Link>
 	);

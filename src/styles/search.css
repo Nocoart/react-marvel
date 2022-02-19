@@ -1,8 +1,10 @@
 .search-container {
-	padding-bottom: 5px;
+	padding-bottom: 0px;
 	position: sticky;
-	top: 62px;
-	z-index: 2;
+	top: 50px;
+	z-index: 3;
+	width: 50vw;
+	margin: 0 auto;
 }
 
 .search-input {

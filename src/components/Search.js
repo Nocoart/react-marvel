@@ -9,13 +9,13 @@ const Search = ({
 	setCharacterSearch,
 	comicsSearch,
 	setComicsSearch,
+	setCurrentPage,
 }) => {
 	const { pathname } = useLocation();
 	const handleChange = (e) => {
 		if (pathname === "/") setCharacterSearch(e.target.value);
 		else if (pathname === "/comics") setComicsSearch(e.target.value);
-		console.log("characterSearch ==", characterSearch);
-		console.log("comicsSearch ==", comicsSearch);
+		setCurrentPage(1);
 	};
 
 	return (

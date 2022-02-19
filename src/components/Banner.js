@@ -1,6 +1,7 @@
 import React from "react";
 import charactersBanner from "../assets/img/character-banner.jpg";
 import comicsBanner from "../assets/img/comics-banner.jpg";
+import bannerGif from "../assets/img/marvel-gif.gif";
 
 import "../styles/banner.css";
 import { useLocation } from "react-router-dom";
@@ -14,7 +15,7 @@ const Banner = () => {
 					pathname === "/"
 						? charactersBanner
 						: pathname === "/comics"
-						? comicsBanner
+						? bannerGif
 						: undefined
 				}
 				alt=""
