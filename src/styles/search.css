@@ -35,3 +35,9 @@
 .search-container input:focus {
 	outline-width: 0;
 }
+
+@media (max-width: 768px) {
+	.search-container {
+		width: 100px;
+	}
+}

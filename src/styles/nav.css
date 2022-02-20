@@ -34,7 +34,9 @@
 }
 @media (max-width: 768px) {
 	.nav-container nav ul li .header-icon {
+		padding-top: 10px;
 		display: block;
+		font-size: 18px;
 	}
 	.nav-container nav ul li span {
 		display: none;
