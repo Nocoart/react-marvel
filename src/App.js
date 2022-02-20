@@ -10,9 +10,14 @@ import Footer from "./components/Footer";
 
 //fontawsome
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch, faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+	faSearch,
+	faHeart,
+	faBookOpen,
+	faMask,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch, faHeart);
+library.add(faSearch, faHeart, faBookOpen, faMask);
 
 function App() {
 	const [currentPage, setCurrentPage] = useState(1);

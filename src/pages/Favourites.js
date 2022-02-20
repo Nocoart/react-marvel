@@ -38,7 +38,6 @@ const Favourites = () => {
 		<div>
 			<Header />
 			<Nav />
-			<ChoosePage />
 			<h1>Favourites Characters</h1>
 			<CharacterCarousel characterArray={favouriteCharacter} />
 			<h1>favourites Comics</h1>
