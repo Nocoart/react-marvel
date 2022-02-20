@@ -38,9 +38,9 @@ const Favourites = () => {
 		<div>
 			<Header />
 			<Nav />
-			<h1>Favourites Characters</h1>
+			<h1>Favorites Characters</h1>
 			<CharacterCarousel characterArray={favouriteCharacter} />
-			<h1>favourites Comics</h1>
+			<h1>favorites Comics</h1>
 			<ComicsCarousel comicsArray={favouriteComics} />
 		</div>
 	);
