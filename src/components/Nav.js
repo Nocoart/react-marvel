@@ -25,7 +25,7 @@ const Nav = ({ setCurrentPage }) => {
 					<Link to={"/favourites"}>
 						<li className={pathname === "/favourites" ? "active" : undefined}>
 							<FontAwesomeIcon icon="heart" className="header-icon" />
-							<span>FAVOURITES</span>
+							<span>FAVORITES</span>
 						</li>
 					</Link>
 				</ul>
