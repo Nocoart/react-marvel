@@ -59,6 +59,7 @@
 	max-height: 270px;
 	overflow: scroll;
 	border-radius: 5px;
+	letter-spacing: 0.1rem;
 }
 .comics-cards:hover .comics-cards-description {
 	display: block;
