@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Comics from "./pages/Comics";
 import Favourites from "./pages/Favourites";
 import CharacterDetail from "./pages/CharacterDetail";
+import Footer from "./components/Footer";
 
 //fontawsome
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -54,6 +55,7 @@ function App() {
 						<Route path="/favourites" element={<Favourites />} />
 					</Routes>
 				</ScrollToTop>
+				<Footer />
 			</Router>
 		</div>
 	);

@@ -1,6 +1,6 @@
 import React from "react";
 import charactersBanner from "../assets/img/character-banner.jpg";
-import comicsBanner from "../assets/img/comics-banner.jpg";
+import favouriteBanner from "../assets/img/favourite-banner.jpeg";
 import bannerGif from "../assets/img/marvel-gif.gif";
 
 import "../styles/banner.css";
@@ -16,7 +16,7 @@ const Banner = () => {
 						? charactersBanner
 						: pathname === "/comics"
 						? bannerGif
-						: undefined
+						: favouriteBanner
 				}
 				alt=""
 				className="banner-img"

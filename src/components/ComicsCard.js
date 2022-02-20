@@ -11,7 +11,12 @@ const ComicsCard = ({ title, thumbnail, description, _id }) => {
 			<div className="comics-card-thumb">
 				<img src={thumbnail.path + "." + thumbnail.extension} alt="" />
 				<div className="like-comics-button">
-					<LikeButton _id={_id} />
+					<LikeButton
+						_id={_id}
+						title={title}
+						thumbnail={thumbnail}
+						description={description}
+					/>
 				</div>
 			</div>
 

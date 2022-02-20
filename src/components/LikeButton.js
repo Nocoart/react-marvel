@@ -4,22 +4,31 @@ import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/likeButton.css";
 
-const LikeButton = ({ _id }) => {
+const LikeButton = ({ _id, title, name, thumbnail, description }) => {
 	const [like, setLike] = useState(false);
 
+	const cookieObj = JSON.stringify({
+		_id: _id,
+		title: title,
+		name: name,
+		thumbnail: thumbnail,
+		description: description,
+	});
+
 	useEffect(() => {
-		if (Cookies.get(_id)) {
+		if (Cookies.get(_id, cookieObj)) {
 			setLike(true);
 		}
 	}, []);
 
-	const handleLike = () => {
-		if (Cookies.get(_id)) {
+	const handleLike = (e) => {
+		e.preventDefault();
+		if (Cookies.get(_id, cookieObj)) {
+			Cookies.remove(_id, cookieObj);
 			setLike(false);
-			Cookies.remove(_id);
 		} else {
 			setLike(true);
-			Cookies.set(_id);
+			Cookies.set(_id, cookieObj);
 		}
 	};
 	return (
