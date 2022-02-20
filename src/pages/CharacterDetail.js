@@ -15,7 +15,7 @@ const CharacterDetail = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const responseCharacter = await axios.get(
-				`http://localhost:3100/comics/${id}`
+				`https://marvel-back-nocoart.herokuapp.com/comics/${id}`
 			);
 			console.log(responseCharacter.data);
 			setCharacter(responseCharacter.data);

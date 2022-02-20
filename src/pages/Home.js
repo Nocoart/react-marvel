@@ -22,7 +22,7 @@ const Home = ({
 		try {
 			const fetchData = async () => {
 				const response = await axios.get(
-					`http://localhost:3100/?name=${characterSearch}&limit=${limit}&page=${currentPage}`
+					`https://marvel-back-nocoart.herokuapp.com/?name=${characterSearch}&limit=${limit}&page=${currentPage}`
 				);
 				console.log(response.data);
 				setCount(response.data.count);

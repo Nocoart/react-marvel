@@ -23,7 +23,7 @@ const Comics = ({
 			try {
 				setIsLoading(true);
 				const response = await axios.get(
-					`http://localhost:3100/comics/?title=${comicsSearch}&limit=${limit}&page=${currentPage}`
+					`https://marvel-back-nocoart.herokuapp.com/comics/?title=${comicsSearch}&limit=${limit}&page=${currentPage}`
 				);
 				setCount(response.data.count);
 				setComicsArray(response.data.results);
